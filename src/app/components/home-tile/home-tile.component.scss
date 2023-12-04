@@ -1,0 +1,38 @@
+div {
+  border: 1px solid black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15% 1fr 1fr;
+  gap: 10px;
+  grid-template-areas:
+    "Heading Heading"
+    ". Icon1"
+    "Icon2 .";
+  height: 100%;
+}
+
+.Heading {
+  grid-area: Heading;
+  text-align: center;
+}
+
+.Icon1 {
+  grid-area: Icon1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Icon2 {
+  grid-area: Icon2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-icon {
+  transform: scale(5);
+}
