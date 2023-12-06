@@ -1,0 +1,93 @@
+//* {
+//  box-sizing: border-box;
+//}
+
+//div {
+//  border: 1px solid black;
+//}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15% 1fr;
+  gap: 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Title Title"
+    "Manual Songs";
+  height: 100%;
+}
+
+.Title {
+  grid-area: Title;
+  text-align: center;
+}
+
+.BigButton {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.Manual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15% 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "Heading Heading"
+    ". Icon1"
+    "Icon2 .";
+  grid-area: Manual;
+}
+
+.Heading {
+  grid-area: Heading;
+}
+
+.Icon1 {
+  grid-area: Icon1;
+}
+
+.Icon2 {
+  grid-area: Icon2;
+}
+
+.Songs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15% 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "Heading2 Heading2"
+    "Icon3 ."
+    ". Icon4";
+  grid-area: Songs;
+}
+
+.Heading2 {
+  grid-area: Heading2;
+}
+
+.Icon3 {
+  grid-area: Icon3;
+}
+
+.Icon4 {
+  grid-area: Icon4;
+}
+
+mat-icon {
+  transform: scale(5);
+  //text-shadow: 1px 0px 3px red;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+[class^="Icon"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[class*="Heading"] {
+  text-align: center;
+}

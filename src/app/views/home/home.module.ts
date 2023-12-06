@@ -4,14 +4,12 @@ import {CommonModule} from '@angular/common';
 import {HomeRoutingModule} from './home-routing.module';
 import {HomeComponent} from './home.component';
 import {MatButtonModule} from "@angular/material/button";
-import {HomeTileComponent} from "../home-tile/home-tile.component";
 import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    HomeTileComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -20,8 +18,7 @@ import {MatIconModule} from "@angular/material/icon";
     MatIconModule,
   ],
   exports: [
-    HomeComponent,
-    HomeTileComponent
+    HomeComponent
   ]
 })
 export class HomeModule {
