@@ -1,10 +1,9 @@
-//* {
-//  box-sizing: border-box;
-//}
-
-//div {
-//  border: 1px solid black;
-//}
+ * , *:before, *:after{
+     box-sizing:border-box;
+     -moz-box-sizing:border-box;
+     -webkit-box-sizing:border-box;
+     -ms-box-sizing:border-box;
+ }
 
 .container {
   display: grid;
@@ -42,6 +41,7 @@
 
 .Heading {
   grid-area: Heading;
+  text-shadow: 4px 4px 5px grey;
 }
 
 .Icon1 {
@@ -66,6 +66,7 @@
 
 .Heading2 {
   grid-area: Heading2;
+  text-shadow: 4px 4px 5px grey;
 }
 
 .Icon3 {
@@ -78,7 +79,6 @@
 
 mat-icon {
   transform: scale(5);
-  //text-shadow: 1px 0px 3px red;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
@@ -90,4 +90,11 @@ mat-icon {
 
 [class*="Heading"] {
   text-align: center;
+}
+
+.Tile {
+  background-color: lightgrey;
+  border-radius: 20px;
+  margin: 0 5% 5% 5%;
+  box-shadow: 10px 5px 20px grey;
 }
