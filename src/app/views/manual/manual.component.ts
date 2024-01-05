@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Location} from "@angular/common";
 import {ChordService} from "../../services/chord.service";
+import {Chord} from "../../models/Chord";
 
 @Component({
   selector: 'manual',
@@ -16,7 +17,7 @@ export class ManualComponent {
   }
 
   playChord(chord: string) {
-    this.chordService.sendChord(chord, 1, 120).subscribe((res) => {
+    this.chordService.sendChord(Chord.Em, 1, 120).subscribe((res) => {
       console.log(res);
     });
   }
