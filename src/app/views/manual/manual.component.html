@@ -3,20 +3,27 @@
     <h1>Manueller Modus</h1>
   </div>
   <div class="Back">
-    <button mat-raised-button color="primary" (click)="back()">Zurück</button>
+    <button mat-raised-button color="accent" (click)="back()">Zurück</button>
   </div>
   <div class="BPM">
-    <mat-form-field>
-      <input matInput placeholder="BPM" type="number" value="120">
+    <mat-form-field color="accent">
+      <mat-label>Geschwindigkeit (BPM)</mat-label>
+      <input matInput placeholder="BPM" type="number" [formControl]="bpmControl" min="1" inputmode="numeric">
+    </mat-form-field>
+  </div>
+  <div class="Length">
+    <mat-form-field color="accent">
+      <mat-label>Länge (Takte)</mat-label>
+      <input matInput placeholder="Länge" type="number" min="1" step="1" [formControl]="lengthControl" inputmode="numeric">
     </mat-form-field>
   </div>
 
-  <div *ngFor="let i of [1, 2, 3, 4, 5, 6, 7]">
+  <div *ngFor="let chord of chords; index as i">
     <div class="Chord{{i}}">
-      <button mat-flat-button (click)="playChord('Em')">Em</button>
+      <button mat-raised-button (click)="playChord(chord)">{{chord}}</button>
     </div>
     <div class="Edit{{i}}">
-      <button mat-button color="primary">Bearbeiten</button>
+      <button mat-stroked-button color="primary">Bearbeiten</button>
     </div>
   </div>
 </div>

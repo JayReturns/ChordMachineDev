@@ -4,6 +4,7 @@ import {ManualRoutingModule} from "./manual-routing.module";
 import {ManualComponent} from "./manual.component";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -11,12 +12,13 @@ import {MatInputModule} from "@angular/material/input";
   declarations: [
     ManualComponent
   ],
-  imports: [
-    CommonModule,
-    ManualRoutingModule,
-    MatButtonModule,
-    MatInputModule
-  ],
+    imports: [
+        CommonModule,
+        ManualRoutingModule,
+        MatButtonModule,
+        MatInputModule,
+        ReactiveFormsModule
+    ],
   exports: [
     ManualComponent
   ]
