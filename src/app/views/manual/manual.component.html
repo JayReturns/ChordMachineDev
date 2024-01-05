@@ -13,7 +13,7 @@
 
   <div *ngFor="let i of [1, 2, 3, 4, 5, 6, 7]">
     <div class="Chord{{i}}">
-      <button mat-flat-button>Em</button>
+      <button mat-flat-button (click)="playChord('Em')">Em</button>
     </div>
     <div class="Edit{{i}}">
       <button mat-button color="primary">Bearbeiten</button>
