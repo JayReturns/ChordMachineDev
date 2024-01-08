@@ -12,8 +12,8 @@ export class ChordService {
 
   constructor(private http: HttpClient) { }
 
-  sendChord(chord: Chord, length: number, bpm: number) {
-    return this.http.post(`${this.baseUrl}`, {chord, length, bpm})
+  sendChord(chord: Chord, bpm: number, length?: number) {
+    return this.http.post(`${this.baseUrl}`, {chord: chord, length: length ?? 0, bpm: bpm})
       .pipe(
         catchError((err) => {
           console.log(err);

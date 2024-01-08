@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {Location} from "@angular/common";
 import {ChordService} from "../../services/chord.service";
 import {Chord} from "../../models/Chord";
-import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'manual',
@@ -12,18 +11,17 @@ import {FormControl} from "@angular/forms";
 export class ManualComponent {
 
   chords: Chord[] = [];
-  bpmControl = new FormControl<number>(120);
-  lengthControl = new FormControl<number>(4);
+  bpm: number = 120;
 
   constructor(private location: Location, private chordService: ChordService) {
     this.chords = [
       Chord.C,
-      Chord.D,
-      Chord.E,
+      Chord.Dm,
+      Chord.Em,
       Chord.F,
       Chord.G,
-      Chord.A,
-      Chord.Em
+      Chord.Am,
+      Chord.Bb
     ]
   }
 
@@ -32,9 +30,12 @@ export class ManualComponent {
   }
 
   playChord(chord: Chord) {
-    this.chordService.sendChord(chord, 1, 120).subscribe((res) => {
+    this.chordService.sendChord(chord, 120).subscribe((res) => {
       console.log(res);
     });
   }
 
+  bpmChanged($event: number) {
+    this.bpm = $event;
+  }
 }

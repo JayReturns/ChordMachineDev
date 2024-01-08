@@ -6,24 +6,15 @@
     <button mat-raised-button color="accent" (click)="back()">Zurück</button>
   </div>
   <div class="BPM">
-    <mat-form-field color="accent">
-      <mat-label>Geschwindigkeit (BPM)</mat-label>
-      <input matInput placeholder="BPM" type="number" [formControl]="bpmControl" min="1" inputmode="numeric">
-    </mat-form-field>
-  </div>
-  <div class="Length">
-    <mat-form-field color="accent">
-      <mat-label>Länge (Takte)</mat-label>
-      <input matInput placeholder="Länge" type="number" min="1" step="1" [formControl]="lengthControl" inputmode="numeric">
-    </mat-form-field>
+    <number-input [initialValue]="bpm" (number)="bpmChanged($event)"></number-input>
   </div>
 
-  <div *ngFor="let chord of chords; index as i">
-    <div class="Chord{{i}}">
+  <ng-container *ngFor="let chord of chords; index as i">
+    <div class="Chord{{i + 1}}">
       <button mat-raised-button (click)="playChord(chord)">{{chord}}</button>
     </div>
-    <div class="Edit{{i}}">
+    <div class="Edit{{i + 1}}">
       <button mat-stroked-button color="primary">Bearbeiten</button>
     </div>
-  </div>
+  </ng-container>
 </div>
