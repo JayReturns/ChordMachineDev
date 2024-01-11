@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Akkord austauschen: <strong>{{currentChord}}</strong></h1>
+<div mat-dialog-content>
+  <mat-selection-list #chordList [multiple]="false">
+    <ng-container *ngFor="let chord of availableChords">
+      <mat-list-option [value]="chord" [disabled]="usedChords.includes(chord)"
+      (click)="onChordListChanged(chordList)">
+        {{chord}}
+      </mat-list-option>
+      <mat-divider></mat-divider>
+    </ng-container>
+  </mat-selection-list>
+</div>
+<!-- Center Actions -->
+<div mat-dialog-actions style="align-content: center">
+  <button mat-button (click)="cancel()" color="warn">Abbrechen</button>
+  <button mat-button (click)="save()" color="primary">Austauschen</button>
+</div>

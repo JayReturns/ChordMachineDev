@@ -4,10 +4,6 @@ span {
   cursor:pointer;
 }
 
-//.number{
-//  margin:100px;
-//}
-
 .minus, .plus{
   width:20px;
   height: $height * 0.75;
@@ -30,17 +26,6 @@ span {
 input {
   text-align: center;
 }
-
-//input {
-//  //height: $height;
-//  width: 100px !important;
-//  text-align: center;
-//  font-size: 36px;
-//  border: 1px solid #ddd;
-//  border-radius: 4px;
-//  display: inline-block;
-//  vertical-align: middle;
-//}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

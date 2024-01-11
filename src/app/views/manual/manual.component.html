@@ -14,7 +14,7 @@
       <button mat-raised-button (click)="playChord(chord)">{{chord}}</button>
     </div>
     <div class="Edit{{i + 1}}">
-      <button mat-stroked-button color="primary">Bearbeiten</button>
+      <button mat-stroked-button color="primary" (click)="editChord(i)">Bearbeiten</button>
     </div>
   </ng-container>
 </div>
