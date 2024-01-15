@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Chord} from "../../models/Chord";
+import {Chord} from "../../models/chord.model";
 import {MatSelectionList} from "@angular/material/list";
 
 @Component({

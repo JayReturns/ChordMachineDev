@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {catchError, throwError} from "rxjs";
-import {Chord} from "../models/Chord";
+import {Chord} from "../models/chord.model";
 
 @Injectable({
   providedIn: 'root'
