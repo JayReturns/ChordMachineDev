@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-[class^="Chord"] {
+[class*="Chord"] {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -42,7 +42,7 @@
 
 }
 
-[class^="Edit"] {
+[class*="Edit"] {
   display: flex;
   justify-content: center;
   align-items: center;
