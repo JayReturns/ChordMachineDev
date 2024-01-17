@@ -1,14 +1,16 @@
-.container {  display: grid;
+.container {
+  display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 0.2fr 0.3fr 1fr 0.2fr;
+  grid-template-rows: 0.2fr /*0.1fr */1fr 0.2fr 0.3fr;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
     "Back Title Title Title Title Title ."
-    ". . BPM BPM BPM . ."
+    //"Selector Selector Selector Selector Selector Selector Selector"
     "Chord1 Chord2 Chord3 Chord4 Chord5 Chord6 Chord7"
-    "Edit1 Edit2 Edit3 Edit4 Edit5 Edit6 Edit7";
-  min-height: 100vh;
+    "Edit1 Edit2 Edit3 Edit4 Edit5 Edit6 Edit7"
+    ". . BPM BPM BPM . .";
+  min-height: 94vh;
 }
 
 .Title {

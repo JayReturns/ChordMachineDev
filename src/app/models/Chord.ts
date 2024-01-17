@@ -1,6 +1,6 @@
 export enum Chord {
   C = 'C',
-  Cm = 'Cm',
+  C7 = 'C7',
   Cmaj7 = 'Cmaj7',
   D = 'D',
   D7 = 'D7',

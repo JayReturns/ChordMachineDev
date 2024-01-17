@@ -34,7 +34,7 @@ export class ManualComponent {
   }
 
   playChord(chord: Chord) {
-    this.chordService.sendChord(chord, 120).subscribe((res) => {
+    this.chordService.sendChord(chord, this.bpm).subscribe((res) => {
       console.log(res);
     });
   }

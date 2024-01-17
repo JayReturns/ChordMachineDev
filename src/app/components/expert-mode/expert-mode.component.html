@@ -1,0 +1,20 @@
+<div class="Expert">
+  <div class="Title">
+    <h1>Manueller Modus</h1>
+  </div>
+  <div class="Back">
+    <button (click)="back()" color="accent" mat-raised-button>Zurück</button>
+  </div>
+  <div class="BPM">
+    <number-input (number)="bpmChanged($event)" [initialValue]="bpm"></number-input>
+  </div>
+  <ng-container *ngFor="let arr of chords">
+    <ng-container *ngFor="let chord of arr">
+      <div class="Expert-Chord">
+        <button (click)="playChord(chord)" *ngIf="chord != null" mat-raised-button>
+          {{ chord }}
+        </button>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

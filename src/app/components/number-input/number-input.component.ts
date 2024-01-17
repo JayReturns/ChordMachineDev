@@ -10,13 +10,13 @@ export class NumberInputComponent {
   @Input() initialValue = 0;
   @Output() number = new EventEmitter<number>();
 
-  minus() {
-    this.initialValue--;
+  minus(amount?: number) {
+    this.initialValue -= amount ?? 1;
     this.number.emit(this.initialValue);
   }
 
-  plus() {
-    this.initialValue++;
+  plus(amount?: number) {
+    this.initialValue += amount ?? 1;
     this.number.emit(this.initialValue);
   }
 
