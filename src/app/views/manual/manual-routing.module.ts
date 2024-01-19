@@ -5,6 +5,7 @@ import {ExpertModeComponent} from "./expert-mode/expert-mode.component";
 import {NormalModeComponent} from "./normal-mode/normal-mode.component";
 
 const routes: Routes = [
+  { path: '', redirectTo: '/manual/normal', pathMatch:'full'},
   { path: '', component: ManualComponent,
     children: [
       { path: 'expert', component: ExpertModeComponent },
