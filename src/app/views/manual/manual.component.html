@@ -1,33 +1,14 @@
-<mat-tab-group selectedIndex="1">
-  <mat-tab label="Normaler Modus">
-
-    <div class="container">
-      <div class="Title">
-        <h1>Manueller Modus</h1>
-      </div>
-      <div class="Back">
-        <button (click)="back()" color="accent" mat-raised-button>Zurück</button>
-      </div>
-
-
-      <div class="BPM">
-        <number-input (number)="bpmChanged($event)" [initialValue]="bpm"></number-input>
-      </div>
-
-      <ng-container *ngFor="let chord of chords; index as i">
-        <div class="Chord{{i + 1}}">
-          <button (click)="playChord(chord)" mat-raised-button>{{ chord }}</button>
-        </div>
-        <div class="Edit{{i + 1}}">
-          <button (click)="editChord(i)" color="primary" mat-stroked-button>Bearbeiten</button>
-        </div>
-      </ng-container>
-    </div>
-
-  </mat-tab>
-
-  <mat-tab label="Expertenmodus">
-    <expert-mode></expert-mode>
-  </mat-tab>
-
-</mat-tab-group>
+<div class="container">
+  <div class="Title">
+    <h1>Manueller Modus</h1>
+  </div>
+  <div class="Back">
+    <button (click)="back()" color="accent" mat-raised-button>Zurück</button>
+  </div>
+  <div class="Mode">
+    <button (click)="changeMode()" color="primary" mat-raised-button>{{modeButton}}</button>
+  </div>
+  <div class="Content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

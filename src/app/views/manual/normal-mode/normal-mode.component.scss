@@ -1,0 +1,76 @@
+.Normal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1.5fr 0.2fr 0.3fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Chord1 Chord2 Chord3 Chord4 Chord5 Chord6 Chord7"
+    "Edit1 Edit2 Edit3 Edit4 Edit5 Edit6 Edit7"
+    ". . BPM BPM BPM . .";
+  min-height: 88vh;
+}
+
+[class*="Chord"] {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 5% 5% 5%;
+
+  button {
+    height: 100%;
+    width: 100%;
+    min-height: 300px;
+    background-color: #d3d3d3;
+    border-radius: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+  }
+
+}
+
+[class*="Edit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 100%;
+  }
+}
+
+.BPM {
+  justify-self: center;
+  align-self: center;
+  grid-area: BPM;
+}
+
+.Chord1 { grid-area: Chord1; }
+
+.Chord2 { grid-area: Chord2; }
+
+.Chord3 { grid-area: Chord3; }
+
+.Chord4 { grid-area: Chord4; }
+
+.Chord5 { grid-area: Chord5; }
+
+.Chord6 { grid-area: Chord6; }
+
+.Chord7 { grid-area: Chord7; }
+
+.Edit1 { grid-area: Edit1; }
+
+.Edit2 { grid-area: Edit2; }
+
+.Edit3 { grid-area: Edit3; }
+
+.Edit4 { grid-area: Edit4; }
+
+.Edit5 { grid-area: Edit5; }
+
+.Edit6 { grid-area: Edit6; }
+
+.Edit7 { grid-area: Edit7; }
+

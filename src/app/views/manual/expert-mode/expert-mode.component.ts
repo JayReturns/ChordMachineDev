@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {Chord} from "../../models/Chord";
+import {Chord} from "../../../models/Chord";
 import {Router} from "@angular/router";
-import {ChordService} from "../../services/chord.service";
+import {ChordService} from "../../../services/chord.service";
 
 @Component({
   selector: 'expert-mode',

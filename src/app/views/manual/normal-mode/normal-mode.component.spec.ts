@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { NormalModeComponent } from './normal-mode.component';
+
+describe('NormalModeComponent', () => {
+  let component: NormalModeComponent;
+  let fixture: ComponentFixture<NormalModeComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [NormalModeComponent]
+    });
+    fixture = TestBed.createComponent(NormalModeComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

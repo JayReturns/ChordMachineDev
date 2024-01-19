@@ -9,7 +9,8 @@ import {NumberInputComponent} from "../../components/number-input/number-input.c
 import {MatIconModule} from "@angular/material/icon";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatTabsModule} from "@angular/material/tabs";
-import {ExpertModeComponent} from "../../components/expert-mode/expert-mode.component";
+import {ExpertModeComponent} from "./expert-mode/expert-mode.component";
+import { NormalModeComponent } from './normal-mode/normal-mode.component';
 
 
 
@@ -17,7 +18,8 @@ import {ExpertModeComponent} from "../../components/expert-mode/expert-mode.comp
   declarations: [
     ManualComponent,
     NumberInputComponent,
-    ExpertModeComponent
+    ExpertModeComponent,
+    NormalModeComponent
   ],
   imports: [
     CommonModule,
