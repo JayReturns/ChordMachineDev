@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="Title">
+    <h1>Meine Songs</h1>
+  </div>
+  <div class="Back">
+    <back-button></back-button>
+  </div>
+  <div class="List">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding (click)="handleSongClick(node)">
+        <button disabled mat-icon-button></button>
+        {{ node.name }}
+      </mat-tree-node>
+
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <button [attr.aria-label]="'Toggle ' + node.name" mat-icon-button
+                matTreeNodeToggle>
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+          </mat-icon>
+        </button>
+        {{ node.name }}
+      </mat-tree-node>
+    </mat-tree>
+  </div>
+</div>

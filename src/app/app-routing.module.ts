@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'manual',
     loadChildren: () => import('./views/manual/manual.module').then(m => m.ManualModule)
+  },
+  {
+    path: 'saved',
+    loadChildren: () => import('./views/saved-songs/saved-songs.module').then(m => m.SavedSongsModule)
   }
 ];
 
