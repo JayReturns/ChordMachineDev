@@ -3,18 +3,12 @@
     <h1>Manueller Modus</h1>
   </div>
   <div class="Back">
-    <button mat-raised-button color="accent" (click)="back()">Zurück</button>
+    <button (click)="back()" color="accent" mat-raised-button>Zurück</button>
   </div>
-  <div class="BPM">
-    <number-input [initialValue]="bpm" (number)="bpmChanged($event)"></number-input>
+  <div class="Mode">
+    <button (click)="changeMode()" color="primary" mat-raised-button>{{modeButton}}</button>
   </div>
-
-  <ng-container *ngFor="let chord of chords; index as i">
-    <div class="Chord{{i + 1}}">
-      <button mat-raised-button (click)="playChord(chord)">{{chord}}</button>
-    </div>
-    <div class="Edit{{i + 1}}">
-      <button mat-stroked-button color="primary" (click)="editChord(i)">Bearbeiten</button>
-    </div>
-  </ng-container>
+  <div class="Content">
+    <router-outlet></router-outlet>
+  </div>
 </div>

@@ -1,0 +1,14 @@
+<div class="Expert">
+  <div class="BPM">
+    <number-input (number)="bpmChanged($event)" [initialValue]="bpm"></number-input>
+  </div>
+  <ng-container *ngFor="let arr of chords">
+    <ng-container *ngFor="let chord of arr">
+      <div class="Chord">
+        <button (click)="playChord(chord)" *ngIf="chord != null" mat-raised-button>
+          {{ chord }}
+        </button>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

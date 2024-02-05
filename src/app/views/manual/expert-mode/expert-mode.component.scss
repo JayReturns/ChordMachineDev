@@ -1,0 +1,35 @@
+.Expert {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1.6fr) 0.5fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . . ."
+    ". . . . . . ."
+    ". . . . . . ."
+    ". . . . . . ."
+    ". . BPM BPM BPM . .";
+}
+
+.BPM {
+  justify-self: center;
+  align-self: center;
+  grid-area: BPM;
+}
+
+.Chord {
+  margin: 2% 2% 2% 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    height: 100%;
+    width: 100%;
+    background-color: #d3d3d3;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+}

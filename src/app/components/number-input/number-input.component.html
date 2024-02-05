@@ -1,11 +1,17 @@
 <div class="number">
-  <button mat-fab color="primary" (click)="minus()">
-    <mat-icon>remove</mat-icon>
+  <button mat-raised-button color="primary" (click)="minus(5)">
+    - 5
+  </button>
+  <button mat-raised-button color="primary" (click)="minus()">
+    - 1
   </button>
   <mat-form-field class="input">
     <input matInput type="number" [value]="initialValue.toString()" (change)="inputChanged($event)">
   </mat-form-field>
-  <button mat-fab color="primary" (click)="plus()">
-    <mat-icon>add</mat-icon>
+  <button mat-raised-button color="primary" (click)="plus()">
+    + 1
+  </button>
+  <button mat-raised-button color="primary" (click)="plus(5)">
+    + 5
   </button>
 </div>

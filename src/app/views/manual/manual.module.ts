@@ -8,13 +8,18 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {NumberInputComponent} from "../../components/number-input/number-input.component";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatTabsModule} from "@angular/material/tabs";
+import {ExpertModeComponent} from "./expert-mode/expert-mode.component";
+import { NormalModeComponent } from './normal-mode/normal-mode.component';
 
 
 
 @NgModule({
   declarations: [
     ManualComponent,
-    NumberInputComponent
+    NumberInputComponent,
+    ExpertModeComponent,
+    NormalModeComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +28,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
   ],
   exports: [
     ManualComponent,
