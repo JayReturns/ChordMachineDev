@@ -12,8 +12,19 @@ export class ChordService {
 
   constructor(private http: HttpClient) { }
 
+  getEndpoint() {
+    const url = localStorage.getItem('endpoint');
+    if (url) {
+      if (!url.includes('http://')) {
+        return `http://${url}`;
+      }
+      return url;
+    }
+    return this.baseUrl;
+  }
+
   sendChord(chord: Chord, bpm: number, length?: number) {
-    return this.http.post(`${this.baseUrl}`, {chord: chord, length: length ?? 0, bpm: bpm})
+    return this.http.post(`${this.getEndpoint()}`, {chord: chord, length: length ?? 0, bpm: bpm})
       .pipe(
         catchError((err) => {
           console.log(err);

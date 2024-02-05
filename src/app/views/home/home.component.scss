@@ -1,4 +1,4 @@
- * , *:before, *:after{
+* , *:before, *:after{
      box-sizing:border-box;
      -moz-box-sizing:border-box;
      -webkit-box-sizing:border-box;
@@ -77,15 +77,15 @@
   grid-area: Icon4;
 }
 
-mat-icon {
-  transform: scale(5);
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-}
-
 [class^="Icon"] {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  mat-icon {
+    transform: scale(5);
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  }
 }
 
 [class*="Heading"] {
@@ -97,4 +97,13 @@ mat-icon {
   border-radius: 20px;
   margin: 0 5% 5% 5%;
   box-shadow: 10px 5px 20px grey;
+}
+
+.Settings {
+  // Align at the top right and make it fixed
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  margin: 10px;
 }

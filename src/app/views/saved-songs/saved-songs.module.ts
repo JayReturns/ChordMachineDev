@@ -16,6 +16,9 @@ import {CdkFixedSizeVirtualScroll, CdkVirtualScrollViewport} from "@angular/cdk/
     SavedSongsComponent,
     BackButtonComponent
   ],
+  exports: [
+    BackButtonComponent
+  ],
   imports: [
     CommonModule,
     SavedSongsRoutingModule,

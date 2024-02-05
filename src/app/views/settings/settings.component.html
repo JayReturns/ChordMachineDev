@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="Title">
+    <h1>Einstellungen</h1>
+  </div>
+  <div class="Back">
+    <back-button></back-button>
+  </div>
+  <div class="Content">
+    <div [formGroup]="settingsForm">
+      <mat-form-field>
+        <mat-label>Endpunkt</mat-label>
+        <input matInput formControlName="endpoint" placeholder="127.0.0.1:8080" required/>
+        <mat-hint>123.231.312.123:9876</mat-hint>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="saveSettings()">Speichern</button>
+  </div>
+</div>

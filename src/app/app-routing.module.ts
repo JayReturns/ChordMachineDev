@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'saved',
     loadChildren: () => import('./views/saved-songs/saved-songs.module').then(m => m.SavedSongsModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./views/settings/settings.module').then(m => m.SettingsModule)
   }
 ];
 

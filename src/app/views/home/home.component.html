@@ -2,7 +2,10 @@
   <div class="Title">
     <h1>Chord Machine</h1>
   </div>
-  <div class="Manual Tile" (click)="navigate('manual')">
+  <div class="Settings">
+    <button mat-stroked-button color="accent" [routerLink]="['/settings']">Einstellungen</button>
+  </div>
+  <div class="Manual Tile" [routerLink]="['/manual']">
     <div class="Heading">
       <h2>Manueller Modus</h2>
     </div>
@@ -13,7 +16,7 @@
       <mat-icon svgIcon="guitar-acoustic"></mat-icon>
     </div>
   </div>
-  <div class="Songs Tile" (click)="navigate('saved')">
+  <div class="Songs Tile" [routerLink]="['/saved']">
     <div class="Heading2">
       <h2>Gespeicherte Songs</h2>
     </div>
