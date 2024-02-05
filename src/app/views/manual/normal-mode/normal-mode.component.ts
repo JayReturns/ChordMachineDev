@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Chord} from "../../../models/Chord";
+import {Chord} from "../../../models/chord.model";
 import {ChordSelectorComponent} from "../../../components/chord-selector/chord-selector.component";
 import {ChordService} from "../../../services/chord.service";
 import {MatDialog} from "@angular/material/dialog";

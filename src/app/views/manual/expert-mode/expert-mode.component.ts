@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Chord} from "../../../models/Chord";
+import {Chord} from "../../../models/chord.model";
 import {Router} from "@angular/router";
 import {ChordService} from "../../../services/chord.service";
 
@@ -11,10 +11,10 @@ import {ChordService} from "../../../services/chord.service";
 export class ExpertModeComponent {
 
   chords: (Chord | null)[][] = [
-    [Chord.C, Chord.D, Chord.E, Chord.F, Chord.G, Chord.A, Chord.Bb],
-    [Chord.C7, Chord.D7, Chord.E7, Chord.Fmaj7, Chord.G7, Chord.A7, Chord.B7],
-    [Chord.Cmaj7, Chord.Dm, Chord.Em, null, null, Chord.Am, null],
-    [null, null, Chord.Em7, null, null, Chord.Am7, null]
+    [Chord.C,     Chord.D,  Chord.E,    Chord.F,      Chord.G,    Chord.A,    Chord.Bb],
+    [Chord.C7,    Chord.D7, Chord.E7,   Chord.Fmaj7,  Chord.G7,   Chord.A7,   Chord.B7],
+    [Chord.Cmaj7, Chord.Dm, Chord.Em,   null,         null,       Chord.Am,   null    ],
+    [null,        null,     Chord.Em7,  null,         null,       Chord.Am7,  null    ]
   ]
   bpm: number = 120;
 
