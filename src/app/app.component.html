@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
+<button (click)="save()">Save</button>
+<button (click)="load()">Load</button>
+
+<div *ngFor="let user of users()">
+  <p>{{user.id}}</p>
+  <p>{{user.name}}</p>
+  <p>{{user.active}}</p>
+  <button (click)="deleteUser(user)">Edit</button>
+  ---------------------
+</div>

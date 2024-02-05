@@ -5,7 +5,9 @@ const config: CapacitorConfig = {
   appName: 'chord-machine-app',
   webDir: 'dist/chord-machine-app',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'https',
+    cleartext: true,
+    url: "http://192.168.178.42:8100",
   },
   plugins: {
     CapacitorSQLite: {
