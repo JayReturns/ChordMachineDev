@@ -1,6 +1,9 @@
 <div class="container">
   <div class="Title">
-    <h1>Manueller Modus</h1>
+    <div *ngIf="this.isExpertMode(); else elseBlock"><h1>Manueller Experten Modus</h1>
+    </div>
+    <ng-template #elseBlock><h1>Manueller Modus</h1></ng-template>
+    
   </div>
   <div class="Back">
     <button (click)="back()" color="accent" mat-raised-button>Zurück</button>

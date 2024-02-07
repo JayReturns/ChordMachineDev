@@ -14,10 +14,10 @@ export class ManualComponent implements AfterViewInit{
 
   ngAfterViewInit() {
     this.router.events.subscribe((event) => {
-      if (this.router.url.toLowerCase().includes('/normal')) {
-        this.modeButton = 'Expert Mode';
+      if (this.isExpertMode()) {
+        this.modeButton = 'Normaler Modus';
       } else {
-        this.modeButton = 'Normal Mode';
+        this.modeButton = 'Experten Modus';
       }
     });
   }
@@ -27,10 +27,18 @@ export class ManualComponent implements AfterViewInit{
   }
 
   changeMode() {
-    if (this.router.url.toLowerCase().includes('/normal')) {
-      this.router.navigate(['/manual/expert']);
-    } else {
+    if (this.isExpertMode()) {
       this.router.navigate(['/manual/normal']);
+    } else {
+      this.router.navigate(['/manual/expert']);
+    }
+  }
+
+  isExpertMode(){
+    if (this.router.url.toLowerCase().includes('/expert')) {
+      return true
+    } else {
+      return false
     }
   }
 
