@@ -15,7 +15,7 @@ export class ManualComponent implements AfterViewInit{
   ngAfterViewInit() {
     this.router.events.subscribe((event) => {
       if (this.isExpertMode()) {
-        this.modeButton = 'Normaler Modus';
+        this.modeButton = 'Einfacher Modus';
       } else {
         this.modeButton = 'Experten Modus';
       }
