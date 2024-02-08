@@ -12,7 +12,8 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {ExpertModeComponent} from "./expert-mode/expert-mode.component";
 import { NormalModeComponent } from './normal-mode/normal-mode.component';
 import {MatBadgeModule} from "@angular/material/badge";
-import {AppModule} from "../../app.module";
+import {MatBadgeIconDirective} from "../../directives/mat-badge-icon.directive";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 
@@ -21,7 +22,8 @@ import {AppModule} from "../../app.module";
     ManualComponent,
     NumberInputComponent,
     ExpertModeComponent,
-    NormalModeComponent
+    NormalModeComponent,
+    MatBadgeIconDirective
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,7 @@ import {AppModule} from "../../app.module";
     MatDialogModule,
     MatTabsModule,
     MatBadgeModule,
-    AppModule,
+    MatSnackBarModule
   ],
   exports: [
     ManualComponent,

@@ -3,6 +3,7 @@ import {Chord} from "../../../models/chord.model";
 import {ChordSelectorComponent} from "../../../components/chord-selector/chord-selector.component";
 import {ChordService} from "../../../services/chord.service";
 import {MatDialog} from "@angular/material/dialog";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-normal-mode',
@@ -15,7 +16,8 @@ export class NormalModeComponent {
   bpm: number = 120;
   editMode: boolean = false;
 
-  constructor(private chordService: ChordService, public dialog: MatDialog) {
+  constructor(private chordService: ChordService, private dialog: MatDialog,
+              private snackBar: MatSnackBar) {
     this.chords = [
       Chord.C,
       Chord.D,
@@ -54,4 +56,12 @@ export class NormalModeComponent {
       this.chords[index] = result.chord;
     });
   }
+
+  changeEditMode() {
+    this.editMode = !this.editMode;
+    this.snackBar.open("Die Akkorde können jetzt bearbeitet werden", undefined, {
+      duration: 10_000,
+    })
+  }
+
 }

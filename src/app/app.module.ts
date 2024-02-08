@@ -13,8 +13,7 @@ import { MatBadgeIconDirective } from './directives/mat-badge-icon.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    ChordSelectorComponent,
-    MatBadgeIconDirective
+    ChordSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +26,6 @@ import { MatBadgeIconDirective } from './directives/mat-badge-icon.directive';
   ],
   providers: [],
   exports: [
-    MatBadgeIconDirective
   ],
   bootstrap: [AppComponent]
 })

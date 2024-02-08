@@ -5,7 +5,7 @@ import {Directive, ElementRef, Input} from '@angular/core';
 })
 export class MatBadgeIconDirective {
 
-  @Input() matBadgeIcon: string | undefined;
+  @Input({required: true}) matBadgeIcon!: string;
 
   constructor(private el: ElementRef) { }
 
