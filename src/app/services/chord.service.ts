@@ -8,7 +8,7 @@ import {Chord} from "../models/chord.model";
 })
 export class ChordService {
 
-  private baseUrl = 'http://localhost:8080/api/accord';
+  private baseUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +16,9 @@ export class ChordService {
     const url = localStorage.getItem('endpoint');
     if (url) {
       if (!url.includes('http://')) {
+        if (!url.endsWith('/')) {
+          return `http://${url}/`;
+        }
         return `http://${url}`;
       }
       return url;
@@ -24,7 +27,7 @@ export class ChordService {
   }
 
   sendChord(chord: Chord, bpm: number, length?: number) {
-    return this.http.post(`${this.getEndpoint()}`, {chord: chord, length: length ?? 0, bpm: bpm})
+    return this.http.post(`${this.getEndpoint()}api/accord`, {chord: chord, length: length ?? 0, bpm: bpm})
       .pipe(
         catchError((err) => {
           console.log(err);

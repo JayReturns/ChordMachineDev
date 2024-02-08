@@ -6,7 +6,7 @@
   grid-auto-flow: row;
   grid-template-areas:
     "Chord1 Chord2 Chord3 Chord4 Chord5 Chord6 Chord7"
-    "Edit1 Edit2 Edit3 Edit4 Edit5 Edit6 Edit7"
+    ". . Edit Edit Edit . ."
     ". . BPM BPM BPM . .";
   min-height: 88vh;
 }
@@ -30,7 +30,8 @@
 
 }
 
-[class*="Edit"] {
+.Edit {
+  grid-area: Edit;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,31 +47,55 @@
   grid-area: BPM;
 }
 
-.Chord1 { grid-area: Chord1; }
+.Chord1 {
+  grid-area: Chord1;
+}
 
-.Chord2 { grid-area: Chord2; }
+.Chord2 {
+  grid-area: Chord2;
+}
 
-.Chord3 { grid-area: Chord3; }
+.Chord3 {
+  grid-area: Chord3;
+}
 
-.Chord4 { grid-area: Chord4; }
+.Chord4 {
+  grid-area: Chord4;
+}
 
-.Chord5 { grid-area: Chord5; }
+.Chord5 {
+  grid-area: Chord5;
+}
 
-.Chord6 { grid-area: Chord6; }
+.Chord6 {
+  grid-area: Chord6;
+}
 
-.Chord7 { grid-area: Chord7; }
+.Chord7 {
+  grid-area: Chord7;
+}
 
-.Edit1 { grid-area: Edit1; }
+@keyframes keyframes1 {
+  0% {
+    transform: rotate(-0.5deg);
+    animation-timing-function: ease-in;
+  }
 
-.Edit2 { grid-area: Edit2; }
+  50% {
+    transform: rotate(0.5deg);
+    animation-timing-function: ease-out;
+  }
+}
 
-.Edit3 { grid-area: Edit3; }
+@keyframes keyframes2 {
+  0% {
+    transform: rotate(0.5deg);
+    animation-timing-function: ease-in;
+  }
 
-.Edit4 { grid-area: Edit4; }
-
-.Edit5 { grid-area: Edit5; }
-
-.Edit6 { grid-area: Edit6; }
-
-.Edit7 { grid-area: Edit7; }
+  50% {
+    transform: rotate(-0.5deg);
+    animation-timing-function: ease-out;
+  }
+}
 

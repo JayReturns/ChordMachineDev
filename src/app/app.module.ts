@@ -9,10 +9,12 @@ import {HttpClientModule} from "@angular/common/http";
 import { ChordSelectorComponent } from './components/chord-selector/chord-selector.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatListModule} from "@angular/material/list";
+import { MatBadgeIconDirective } from './directives/mat-badge-icon.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    ChordSelectorComponent
+    ChordSelectorComponent,
+    MatBadgeIconDirective
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import {MatListModule} from "@angular/material/list";
   ],
   providers: [],
   exports: [
+    MatBadgeIconDirective
   ],
   bootstrap: [AppComponent]
 })

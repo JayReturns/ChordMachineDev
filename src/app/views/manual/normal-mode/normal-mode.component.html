@@ -3,11 +3,12 @@
     <number-input (number)="bpmChanged($event)" [initialValue]="bpm"></number-input>
   </div>
   <ng-container *ngFor="let chord of chords; index as i">
-    <div class="Chord{{i + 1}}">
-      <button (click)="playChord(chord)" mat-raised-button>{{ chord }}</button>
-    </div>
-    <div class="Edit{{i + 1}}">
-      <button (click)="editChord(i)" color="primary" mat-stroked-button>Bearbeiten</button>
+    <div class="Chord{{i + 1}}" >
+      <button (click)="handleChordClick(chord, i)" mat-raised-button matBadgeIcon="home">{{ chord }}</button>
     </div>
   </ng-container>
+  <div class="Edit">
+    <button (click)="editMode = !editMode" color="primary" mat-stroked-button *ngIf="!editMode">Bearbeiten</button>
+    <button (click)="editMode = !editMode" color="primary" mat-raised-button *ngIf="editMode">Fertig</button>
+  </div>
 </div>

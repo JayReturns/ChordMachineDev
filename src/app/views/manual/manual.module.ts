@@ -11,6 +11,8 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatTabsModule} from "@angular/material/tabs";
 import {ExpertModeComponent} from "./expert-mode/expert-mode.component";
 import { NormalModeComponent } from './normal-mode/normal-mode.component';
+import {MatBadgeModule} from "@angular/material/badge";
+import {AppModule} from "../../app.module";
 
 
 
@@ -29,7 +31,9 @@ import { NormalModeComponent } from './normal-mode/normal-mode.component';
     ReactiveFormsModule,
     MatIconModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatBadgeModule,
+    AppModule,
   ],
   exports: [
     ManualComponent,

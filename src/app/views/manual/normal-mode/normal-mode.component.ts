@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Chord} from "../../../models/chord.model";
 import {ChordSelectorComponent} from "../../../components/chord-selector/chord-selector.component";
 import {ChordService} from "../../../services/chord.service";
@@ -11,23 +11,27 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class NormalModeComponent {
 
-    chords: Chord[] = [];
-    bpm: number = 120;
+  chords: Chord[] = [];
+  bpm: number = 120;
+  editMode: boolean = false;
 
+  constructor(private chordService: ChordService, public dialog: MatDialog) {
+    this.chords = [
+      Chord.C,
+      Chord.D,
+      Chord.F,
+      Chord.G,
+      Chord.Dm,
+      Chord.Em,
+      Chord.Am
+    ]
+  }
 
-    constructor(private chordService: ChordService, public dialog: MatDialog) {
-      this.chords = [
-        Chord.C,
-        Chord.Dm,
-        Chord.Em,
-        Chord.F,
-        Chord.G,
-        Chord.Am,
-        Chord.Bb
-      ]
+  handleChordClick(chord: Chord, index: number) {
+    if (this.editMode) {
+     this.editChord(index);
+     return;
     }
-
-      playChord(chord: Chord) {
     this.chordService.sendChord(chord, this.bpm).subscribe((res) => {
       console.log(res);
     });
@@ -50,5 +54,4 @@ export class NormalModeComponent {
       this.chords[index] = result.chord;
     });
   }
-
 }
