@@ -3,13 +3,23 @@
     <div *ngIf="this.isExpertMode(); else elseBlock"><h1>Experten Modus</h1>
     </div>
     <ng-template #elseBlock><h1>Einfacher Modus</h1></ng-template>
-    
+
   </div>
   <div class="Back">
     <button (click)="back()" color="accent" mat-raised-button>Zurück</button>
   </div>
   <div class="Mode">
-    <button (click)="changeMode()" color="primary" mat-raised-button>{{modeButton}}</button>
+    <div *ngIf="router.url.includes('normal')">
+      <button *ngIf="!editMode; else noEditMode" [queryParams]="{ edit: '1'}" [routerLink]="['normal']" color="primary"
+              mat-raised-button>Bearbeiten
+      </button>
+      <ng-template #noEditMode>
+        <button [queryParams]="{ edit: '0'}" [routerLink]="['normal']" color="primary" mat-raised-button>
+          Fertig
+        </button>
+      </ng-template>
+    </div>
+    <button (click)="changeMode()" color="primary" mat-raised-button>{{ modeButton }}</button>
   </div>
   <div class="Content">
     <router-outlet></router-outlet>

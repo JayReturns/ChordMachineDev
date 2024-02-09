@@ -1,5 +1,5 @@
 import {AfterViewInit, Component} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'manual',
@@ -9,8 +9,17 @@ import {Router} from "@angular/router";
 export class ManualComponent implements AfterViewInit{
 
   modeButton: string = '';
+  editMode: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(protected router: Router, private route: ActivatedRoute) {
+    this.route.queryParamMap.subscribe(params => {
+      if (!params.get('edit')) {
+        this.editMode = false;
+        return;
+      }
+      this.editMode = params.get('edit') === '1';
+    });
+  }
 
   ngAfterViewInit() {
     this.router.events.subscribe((event) => {

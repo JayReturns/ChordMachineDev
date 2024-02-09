@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {ChordService} from "../../services/chord.service";
@@ -43,7 +43,7 @@ export class SettingsComponent implements OnInit {
 
 export function ipValidator(): ValidatorFn {
     return (control: AbstractControl) => {
-    const regex = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}(?::\d{1,5})?$/;
+    const regex = /^(?:\d{1,3}\.){3}\d{1,3}(?::\d{1,5})?$/;
 
     if (regex.test(control.value)) {
       return null;

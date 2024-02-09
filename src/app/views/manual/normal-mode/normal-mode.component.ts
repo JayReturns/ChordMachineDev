@@ -4,6 +4,7 @@ import {ChordSelectorComponent} from "../../../components/chord-selector/chord-s
 import {ChordService} from "../../../services/chord.service";
 import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-normal-mode',
@@ -17,7 +18,7 @@ export class NormalModeComponent {
   editMode: boolean = false;
 
   constructor(private chordService: ChordService, private dialog: MatDialog,
-              private snackBar: MatSnackBar) {
+              private snackBar: MatSnackBar, private route: ActivatedRoute) {
     this.chords = [
       Chord.C,
       Chord.D,
@@ -27,6 +28,10 @@ export class NormalModeComponent {
       Chord.Em,
       Chord.Am
     ]
+    this.route.queryParams.subscribe(params => {
+      if (!params['edit']) return;
+      this.editMode = params['edit'] === 'true' || params['edit'] === '1';
+    })
   }
 
   handleChordClick(chord: Chord, index: number) {
