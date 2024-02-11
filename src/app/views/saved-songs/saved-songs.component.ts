@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, effect} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from "@angular/material/tree";
 import {FlatTreeControl} from "@angular/cdk/tree";
 import {DummyService} from "../../services/dummy.service";
+import {StorageService} from "../../services/storage.service";
 
 interface SongNode {
   name: string;
@@ -46,9 +47,11 @@ export class SavedSongsComponent {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor(private dummyService: DummyService) {
-    dummyService.getSongs().then(songs => {
-      songs.forEach(song => {
+  constructor(private dummyService: DummyService,
+              private storageService: StorageService) {
+    effect(() => {
+      this.TREE_DATA = []; // TODO: Is there a better way to do this?
+      this.storageService.getSongList().forEach(song => {
         let artistNode = this.TREE_DATA.find(node => node.name === song.artist);
         if (!artistNode) {
           artistNode = { name: song.artist, children: [], id: -1 };
