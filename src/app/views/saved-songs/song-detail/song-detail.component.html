@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="Back">
+    <back-button destination="/saved/"></back-button>
+  </div>
+  <div class="Title"></div>
+  <div class="Content">
+
+    <ng-template #songNotAvailable>
+      <div class="Error">
+        <h1>Es ist ein Fehler aufgetreten</h1>
+        <p>Der Song konnte nicht gefunden werden</p>
+      </div>
+    </ng-template>
+
+    <div *ngIf="song; else songNotAvailable">
+      <div class="SongTitle">
+        <h1>{{ song.artist }} - {{ song.title }}</h1>
+      </div>
+
+      <div class="PlayButton">
+        <button mat-flat-button>
+          Abspielen
+        </button>
+      </div>
+
+      <div class="BPM">
+        <number-input [initialValue]="song.bpm"></number-input>
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf="song" class="Edit">
+    <a [routerLink]="['/saved/song', song.id, 'edit']">
+      <button color="accent" mat-fab>
+        <mat-icon>edit</mat-icon>
+      </button>
+    </a>
+  </div>
+</div>

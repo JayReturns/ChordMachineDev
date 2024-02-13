@@ -3,6 +3,7 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from "@angular/material/tree";
 import {FlatTreeControl} from "@angular/cdk/tree";
 import {DummyService} from "../../services/dummy.service";
 import {StorageService} from "../../services/storage.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 interface SongNode {
   name: string;
@@ -48,7 +49,9 @@ export class SavedSongsComponent {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
   constructor(private dummyService: DummyService,
-              private storageService: StorageService) {
+              private storageService: StorageService,
+              private router: Router,
+              private route: ActivatedRoute) {
     effect(() => {
       this.TREE_DATA = []; // TODO: Is there a better way to do this?
       this.storageService.getSongList().forEach(song => {
@@ -67,5 +70,6 @@ export class SavedSongsComponent {
 
   handleSongClick(node: SongFlatNode) {
     console.log(node);
+    this.router.navigate([`song/${node.id}`], {relativeTo: this.route});
   }
 }

@@ -37,8 +37,9 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatBadgeModule,
     MatSnackBarModule
   ],
-  exports: [
-    ManualComponent,
-  ]
+    exports: [
+        ManualComponent,
+        NumberInputComponent,
+    ]
 })
 export class ManualModule { }

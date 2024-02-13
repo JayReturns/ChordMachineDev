@@ -57,6 +57,20 @@ export class StorageService {
     await this.loadSongs();
   }
 
+  async getSong(id: number) {
+    const result = await this.db.query(`SELECT * FROM songs WHERE id = ?;`, [id])
+    if (!result.values) {
+      return undefined;
+    }
+    return result.values[0] as Song;
+
+  }
+
+  async songExists(id: number) {
+    const song = await this.getSong(id);
+    return song !== undefined;
+  }
+
   async clearSongs() {
     await this.db.run("DELETE FROM songs;");
     this.songList.set([]);
