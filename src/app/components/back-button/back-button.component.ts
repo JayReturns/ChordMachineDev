@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,11 +8,13 @@ import {Router} from "@angular/router";
 })
 export class BackButtonComponent {
 
+  @Input({required: false}) destination: string = '/';
+
   constructor(private router: Router) {
   }
 
   back() {
-    this.router.navigate(['/']);
+    this.router.navigate([this.destination]);
   }
 
 }
