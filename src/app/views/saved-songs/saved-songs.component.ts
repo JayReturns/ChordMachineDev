@@ -69,7 +69,6 @@ export class SavedSongsComponent {
   hasChild = (_: number, node: SongFlatNode) => node.expandable;
 
   handleSongClick(node: SongFlatNode) {
-    console.log(node);
     this.router.navigate([`song/${node.id}`], {relativeTo: this.route});
   }
 }
