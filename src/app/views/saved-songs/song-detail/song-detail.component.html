@@ -4,6 +4,7 @@
   </div>
   <div class="Title"></div>
   <div class="Content">
+
     <ng-template #songNotAvailable>
       <div class="Error">
         <h1>Es ist ein Fehler aufgetreten</h1>
@@ -17,7 +18,7 @@
       </div>
 
       <div class="PlayButton">
-        <button mat-flat-button>
+        <button mat-flat-button (click)="playSong()">
           Abspielen
         </button>
       </div>
