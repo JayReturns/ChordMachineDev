@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {StorageService} from "../../../services/storage.service";
 import {Song} from "../../../models/song.model";
-import {InitializeAppService} from "../../../services/initialize.app.service";
 import {ChordService} from "../../../services/chord.service";
+import {DummyService} from "../../../services/dummy.service";
 
 @Component({
   selector: 'app-song-detail',
@@ -15,16 +14,11 @@ export class SongDetailComponent {
   protected song: Song | undefined;
 
   constructor(private route: ActivatedRoute,
-              private storageService: StorageService,
-              private initializeApp: InitializeAppService,
-              private chordService: ChordService) {
-    this.initializeApp.isAppInit ? Promise.resolve() : this.initializeApp.initializeApp().then(() => {
-      console.log("1")
+              private chordService: ChordService,
+              private dummyService: DummyService) {
       this.route.params.subscribe(params => {
-        console.log("2")
         const id = params['id'];
-        this.storageService.getSong(id).then((song) => {
-          console.log("3")
+        this.dummyService.getSong(id).then((song) => {
           this.song = song
           if (!song) return;
           this.chordService.sendSong(song).subscribe(() => {
@@ -32,7 +26,6 @@ export class SongDetailComponent {
           });
         });
       });
-    });
   }
 
   playSong() {

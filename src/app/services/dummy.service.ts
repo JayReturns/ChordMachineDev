@@ -285,6 +285,10 @@ export class DummyService {
     return this.songs.map(song => song.artist).filter(this.onlyUnique);
   }
 
+  async getSong(id: number): Promise<Song | undefined> {
+    return this.songs.find(song => song.id == id);
+  }
+
   private onlyUnique(value: any, index: any, array: any) {
     return array.indexOf(value) === index;
   }
